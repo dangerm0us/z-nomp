@@ -146,7 +146,7 @@
 					{{if (String(it.stats.pools[pool].name).startsWith("zcash")) { }}
 						<a href="https://explorer.zcha.in/blocks/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
 					{{ } else if (String(it.stats.pools[pool].name).startsWith("zclassic")) { }}
-						<a href="https://classic.zcha.in/blocks/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
+						<a href="https://zcl-explorer.com/insight/block/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
 					{{ } else if (String(it.stats.pools[pool].name).startsWith("hush")) { }}
 						<a href="https://explorer.myhush.org/block/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
 					{{ } else { }}
@@ -157,7 +157,7 @@
 					{{ } }}
 					{{if (it.stats.pools[pool].pending.confirms) { }}
 					    {{if (it.stats.pools[pool].pending.confirms[block[0]]) { }}
-						<span style="float:right; color: red;"><small>{{=it.stats.pools[pool].pending.confirms[block[0]]}} of 100</small></span>
+						<span style="float:right; color: red;"><small>{{=it.stats.pools[pool].pending.confirms[block[0]]}} of ~130</small></span>
 					    {{ } else { }}
 						<span style="float:right; color: red;"><small>*PENDING*</small></span>
 					    {{ } }}
@@ -176,7 +176,7 @@
 					{{if (String(it.stats.pools[pool].name).startsWith("zcash")) { }}
 						<a href="https://explorer.zcha.in/blocks/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
 					{{ } else if (String(it.stats.pools[pool].name).startsWith("zclassic")) { }}
-						<a href="https://classic.zcha.in/blocks/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
+						<a href="https://zcl-explorer.com/insight/block/{{=block[0]}}" target="_blank">{{=block[2]}}</a>
 					{{ } else { }}
 						{{=block[2]}}
 					{{ } }}

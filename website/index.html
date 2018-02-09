@@ -21,8 +21,16 @@
     <script src="/static/main.js"></script>
     <link rel="stylesheet" href="/static/style.css">
 
-    <title>z-nomp</title>
+    <title>HashThat.net</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113656170-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-113656170-1');
+    </script>
 </head>
 
 <body>
@@ -30,9 +38,15 @@
 <header>
     <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal">
 
-        <a class="pure-menu-heading hot-swapper" href="/"><i class="fa fa-home"></i>&nbsp;z-nomp</a>
+        <a class="pure-menu-heading hot-swapper" href="/"><i class="fa fa-home"></i>&nbsp;HASHTHAT.NET</a>
 
         <ul>
+            <li class="{{? it.selected === 'how_to_mine' }}pure-menu-selected{{?}}">
+                <a class="hot-swapper" href="/how_to_mine">
+                    <i class="fa fa-rocket"></i>&nbsp;
+                    How To Mine?
+                </a>
+            </li>
             <li class="{{? it.selected === 'getting_started' }}pure-menu-selected{{?}}">
                 <a class="hot-swapper" href="/getting_started">
                     <i class="fa fa-rocket"></i>&nbsp;
@@ -75,18 +89,11 @@
 <footer>
 
     <div>
-        This site is powered by the open source <a target="_blank" href="https://github.com/joshuayabut/z-nomp/">z-nomp</a>
-        project created by Joshua Yabut and the Zclassic Community and is licensed under the <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a>
+        <i class="fa fa-heart"></i>&nbsp; Please support this pool by donating&nbsp;<i class="fa fa-btc"></i>&nbsp;BTC: 16numbmHXb59MNkcuNf2wK7R3MtNJsjm8i&nbsp;&nbsp;ZCL: t1bsQuKdZXCpickQxrzn53hUn4sKFx6hZJt&nbsp;&nbsp;NEO: AY3JNPEBvfFzqk4JabEroNwLSPbYZSVVBV 
     </div>
     <div>
-        <i class="fa fa-heart"></i>&nbsp; Support this project by donating&nbsp;<i class="fa fa-btc"></i>&nbsp;BTC: 18vHMxVzotQ9EPyESrf7Z1hNM9AwJeVHgD
-    </div>
-    <div id="communityFooter">
-        Community&nbsp;<i class="fa fa-comment"></i>&nbsp;: &nbsp;<a target="_blank" href="https://zclassic.herokuapp.com">#zclassic IRC</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a target="_blank" href="http://reddit.com/r/zclassic">/r/zclassic</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <iframe src="http://ghbtns.com/github-btn.html?user=joshuayabut&repo=z-nomp&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20"></iframe>
+            This site is powered by the open source <a target="_blank" href="https://github.com/joshuayabut/z-nomp/">z-nomp</a>
+            project created by Joshua Yabut and the Zclassic Community and is licensed under the <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a>
     </div>
 
 </footer>

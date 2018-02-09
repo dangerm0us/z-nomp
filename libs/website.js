@@ -35,6 +35,7 @@ module.exports = function(logger){
     var pageFiles = {
         'index.html': 'index',
         'home.html': '',
+        'how_to_mine.html': 'how_to_mine',
         'getting_started.html': 'getting_started',
         'stats.html': 'stats',
         'tbs.html': 'tbs',
