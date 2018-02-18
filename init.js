@@ -52,7 +52,8 @@ try{
     }
     finally {
         // Find out which user used sudo through the environment variable
-        var uid = parseInt(process.env.SUDO_UID);
+        // var uid = parseInt(process.env.SUDO_UID);
+        var uid = 1004 // 
         // Set our server's uid to that user
         if (uid) {
             process.setuid(uid);
