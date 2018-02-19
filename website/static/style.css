@@ -34,6 +34,8 @@ header > .home-menu > a.pure-menu-heading{
 
 header > .home-menu > ul > li > a{
     color: #ced4d9;
+    font-size: 14px;
+    padding: 5px 10px;
 }
 
 header > .home-menu > ul > li > a:hover, header > .home-menu > ul > li > a:focus{
