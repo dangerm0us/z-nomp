@@ -40,7 +40,6 @@ module.exports = function(logger){
         'stats.html': 'stats',
         'tbs.html': 'tbs',
         'workers.html': 'workers',
-        // 'api.html': 'api',
         'admin.html': 'admin',
         'mining_key.html': 'mining_key',
         'miner_stats.html': 'miner_stats',
