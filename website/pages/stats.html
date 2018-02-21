@@ -157,12 +157,12 @@
 					{{ } }}
 					{{if (it.stats.pools[pool].pending.confirms) { }}
 					    {{if (it.stats.pools[pool].pending.confirms[block[0]]) { }}
-						<span style="float:right; color: red;"><small>{{=it.stats.pools[pool].pending.confirms[block[0]]}} of ~130</small></span>
+						<span style="float:right; color: red;"><i class="fa fa-spinner fa-spin"></i><small>{{=it.stats.pools[pool].pending.confirms[block[0]]}} of ~125</small></span>
 					    {{ } else { }}
-						<span style="float:right; color: red;"><small>*PENDING*</small></span>
+						<span style="float:right; color: red;"><i class="fa fa-spinner fa-spin"></i><small>*PENDING*</small></span>
 					    {{ } }}
 					{{ } else { }}
-					    <span style="float:right; color: red;"><small>*PENDING*</small></span>
+					    <span style="float:right; color: red;"><i class="fa fa-spinner fa-spin"></i><small>*PENDING*</small></span>
 					{{ } }}
 					<div><i class="fa fa-gavel"></i><small>Mined By:</small> <a href="/workers/{{=block[3].split('.')[0]}}">{{=block[3]}}</a></div>
 				</div>
