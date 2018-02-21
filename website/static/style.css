@@ -72,42 +72,6 @@ footer iframe{
     border-bottom:2px solid #005984
 }
 
-/* Josh's alert box */
-/* .alert {
-    border-radius: 10px;
-    padding: 1px 5px;
-    background-color: #D66058;
-    color: white;
-    opacity: 10;
-    transition: opacity 0.6s;
-    margin-bottom: 10px;
-}
-.alert p{
-    margin: 0.7em 0;
-}
-.alert.mzorange {background-color: #ff8c28;}
-.alert.success {background-color: #02CA4B;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
-.alert.mzpurple {background-color: #B064E1;}
-.alert.mzdarkpurple {background-color: #483D8B;}
-.alert.mzcyan {background-color: #0EAFC7;}
-.alert.mzoffgreen {background-color: #10BB9C;}
-.hidealert {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.hidealert:hover {
-    color: black;
-} */
-/* End Josh's alert box */
-
 .banner {
     box-sizing: border-box;
     padding: 16px;
@@ -116,10 +80,9 @@ footer iframe{
     color: #fff;
     border-radius: 10px;
     padding: 1px 5px;
-    background-color: rgb(0, 238, 255);
+    background-color: rgb(35, 129, 192);
     color: black;
     opacity: 10;
-    transition: opacity 0.6s;
     margin-bottom: 10px;
   }
 .closebtn {
