@@ -73,7 +73,7 @@ footer iframe{
 }
 
 /* Josh's alert box */
-.alert {
+/* .alert {
     border-radius: 10px;
     padding: 1px 5px;
     background-color: #D66058;
@@ -105,5 +105,29 @@ footer iframe{
 }
 .hidealert:hover {
     color: black;
-}
+} */
 /* End Josh's alert box */
+
+div {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1px 5px;
+    background-color: rgb(0, 238, 255);
+    color: black;
+    opacity: 10;
+    transition: opacity 0.6s;
+    margin-bottom: 10px;
+  }
+.closebtn {
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .closebtn:hover {
+    color: #000;
+  }
