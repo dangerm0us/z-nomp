@@ -1,3 +1,5 @@
+
+<main>
 <style>
     #holder{
         display: flex;
@@ -68,24 +70,25 @@
     }
 
     .miningOption:first-child{
-        background-color: #0eafc7;
+        background-color: #0e11c7;
     }
     .miningOption:last-child{
-        background-color: #b064e1;
+        background-color: #5a4c64;
     }
     .miningOptionNum{
         font-size: 6em;
-        padding-right: 20px;
+        padding-right: 0px;
         width: 140px;
         text-align: center;
     }
     .miningOptionInstructions{
         flex: 1 1 auto;
+        width: 80%;
+        margin-bottom: 15px;
     }
 
     .miningOptionInstructions > div:first-child{
-        /* font-size: 2.4em; */
-        font-size: 1.3em;
+        font-size: 2.4em;
     }
     .miningOptionInstructions > div:last-child{
         margin-top: 20px;
@@ -109,217 +112,247 @@
         font-style: italic;
     }
 
-    #coinInfoBackground{
-        transition-duration: 400ms;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: black;
-        opacity: 0.0;
-    }
-    #coinInfo{
-        display: flex;
-        flex-direction: column;
-        color: white;
-        width: 750px;
-        min-height: 400px;
-        top: 50px;
-        left: 50%;
-        margin-left: -375px;
-        position: absolute;
-        background-color: #f06350;
-    }
-    #coinInfo .coinInfoName{
-        text-transform: capitalize;
-    }
-    #coinInfo > div:first-of-type{
-        font-size: 1.8em;
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 35px;
-    }
-    #coinInfoRows{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex: 1 1 auto;
-        margin-bottom: 70px;
-    }
-    #coinInfoRows > div{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    #coinInfoRows > div > div{
-        padding: 3px;
-    }
-    #coinInfoRowKeys{
-        font-weight: bold;
-        padding-right: 30px;
-    }
-    #coinInfoRowKeys .coinInfoSubtle{
-        font-weight: normal;
-    }
-    #coinInfoRowValues{
+    
+    pre {
+        font-size: 12px;
+        line-height: 1.2em;
+        font-family: "Courier 10 Pitch", Courier, monospace;
+        white-space: pre;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
 
+        height:1%;
+        width: auto;
+        display: block;
+        clear: both;
+        color: #555555;
+        padding: 1em 1em;
+        margin: auto 40px auto 40px;
+        background: #f4f4f4;
+        border: solid 1px #e1e1e1
     }
-    #coinInfoClose{
-        position: absolute;
-        font-size: 3em;
-        top: 0;
-        right: 0;
-        width: 60px;
-        height: 60px;
-        text-align: center;
-        color: white;
-        text-decoration: none;
-    }
-    #coinInfoClose:hover{
-        color: #50f0e3;
-    }
+    *{margin:0; padding:0;}
+
+ul.no-bullets li 
+{
+    list-style-type: none !important;
+}
+
+#BatchGenOverlay{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.8);
+}
+#BatchGen select,#BatchGen input{
+    color: #000000;
+}
+#BatchGen #output{
+    padding: 6px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid;
+    text-align: center;
+}
+#BatchGen{
+  position:relative;
+  margin:100px auto;
+  background:#3d3d3d;
+  width:600px;
+  padding:30px;
+  box-shadow: 0 5px 50px -4px #aaa;
+}
+#BatchGen span.BatchGenClose{
+  cursor:pointer;
+  font-size:20px;
+  position:absolute;
+  right:20px;
+  top:15px;
+}
 </style>
 
-<div id="holder">
+<div id="main">
+<div class="miningOption">
+<div class="miningOptionNum"></div>
+<div class="miningOptionInstructions">
+<div>Let's get started!<br>
+</div>
+<p>
+HashThat.net supports crypto currencies you can mine with the GPU in your computer.</p>
+<br />
+<h4 style="font-size: 17px;">The process is actually very easy, and we will do it in 3 simple steps:</h4>
+<ul>
+<li><i class="fa fa-gavel"></i>&nbsp;Choose your mining software depending on your graphics card (AMD or Nvidia)</li>
+<li><i class="fa fa-tablet" data-fa-transform="rotate--90"></i></i>&nbsp;Download and install a wallet for your coins</li>
+<li><i class="fa fa-rocket"></i>&nbsp;Create a launcher file that starts your miner and connects to our pool</li>
+</ul>
+<br>
+<hr>
+<br>
+<div class="miningOptionInstructions" style=" font-size: 20px;"><h4><hard>Recommended Software for mining</hard></h4></div>
 
-    <div id="menu">
 
-        {{? (function(){
-                if (!it.portalConfig.switching) return false;
-                for (var p in it.portalConfig.switching){
-                    if (it.portalConfig.switching[p].enabled)
-                        return true;
-                }
-                return false;
-            })()
-        }}
-        <div class="menuHeader">Coin-Switching Ports</div>
-        {{?}}
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+<style scoped>
+        .button-linked {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: #2A363B; /* this is background grey -tweak to what ever*/
+        }
 
-        <div class="menuList">
-        {{ for (var p in it.portalConfig.switching){
-            if (!it.portalConfig.switching[p].enabled) continue;
-            var info = {
-                algo: p,
-                ports: {},
-                host: it.portalConfig.website.stratumHost
-            };
-            info.ports[it.portalConfig.switching[p].port] = {diff: it.portalConfig.switching[p].diff};
-            info = JSON.stringify(info).replace(/"/g, '&quot;');
-        }}
-            <a href="#" class="poolOption" data-info="{{=info}}">{{=p}}</a>
-        {{ } }}
-        </div>
+        .button-linked:hover {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: #ff8c28; /* this is mzorange -tweak to what ever*/
+        }
 
-        <div class="menuHeader">Coins</div>
-        <div class="menuList" id="coinList">
-            {{ for(var pool in it.poolsConfigs) {
-                var info = JSON.stringify({
-                    coin: it.poolsConfigs[pool].coin,
-                    algo: it.poolsConfigs[pool].coin.algorithm,
-                    ports: it.poolsConfigs[pool].ports,
-                    host: it.portalConfig.website.stratumHost
-                }).replace(/"/g, '&quot;');
-            }}
-            <a href="#" class="poolOption" data-info="{{=info}}">{{=pool}}</a>
-            {{ } }}
-        </div>
-    </div>
+        .button-batch {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: #ff3232; /* this is background grey -tweak to what ever*/
+        }
 
-    <div id="main">
-        <!-- <a href="#" class="miningOption" id="nompAppDownload"> -->
-            <div class="miningOptionNum">1.</div>
-            <div class="miningOptionInstructions">
-                <div>Download Mining Software</div>
-                <div>Nvidia:  EWBF Cuda</div>
-                <div>Nvidia:  bminer</div>
-                <div>Nvidia:  NEHQ</div>
-                <div>AMD:  Optiminer</div>
-                <div>AMD:  Claymore</div>
-                <div>AMD:  Genesis SGminer</div>
-                <div>Page under construction!</div>
-            </div>
-        <!-- </a> -->
-        <!-- <div id="orHolder">
-            <div id="orLine"></div>
-            <div id="orText">or</div>
-        </div>
-        <a href="#" class="miningOption" id="coinGlowTrigger">
-            <div class="miningOptionNum">2.</div>
-            <div class="miningOptionInstructions">
-                <div>Select a coin for connection details</div>
-                <div>Configurations for each coin are available for advanced miners</div>
-            </div>
-        </a> -->
-    </div>
+        .button-batch:hover {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: #ff8c28; /* this is mzorange -tweak to what ever*/
+        }
+      </style>
+<div style="width: 50%">
+<h4>AMD Mining Software:</h4>
+<br>
+<a class="button-linked pure-button" onclick="ga('send','event','Download miner','Claymores')" href="https://bitcointalk.org/index.php?topic=1670733.0" target="_blank">Claymores</a>
+<br>
+</div>
+<div style="width: 50%">
+<h4>nVidia Mining Software:</h4>
+<br>
+<a class="button-linked pure-button" onclick="ga('send','event','Download miner','EWBFs')" href="https://bitcointalk.org/index.php?topic=1707546.0" target="_blank">EWBF</a>
+&emsp;
+<a class="button-linked pure-button" onclick="ga('send','event','Download miner','DSTM')" href="https://bitcointalk.org/index.php?topic=2021765.0" target="_blank">DSTM</a>
+</div>
+</div>
+<div>
+<h4>General Windows Guide</h4>
+<p>
+</p><ol style="font-size: 14px;">
+<li>Download and extract (unzip) your chosen mining software to its own folder</li>
+<li>Create a new txt file in the new folder (which should contain the mining software) named "hashthat.bat"
+<ul>
+<li>Right click in the folder, select New -> Text Document, rename "New Text Document.txt" to hashthat.bat.</li>
+<li>If you can't see the file extensions (.txt) you will need to enable them. Guide <a href="https://support.microsoft.com/en-us/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer" target="_blank">HERE</a></li>
+</ul>
+</li>
+<li>Use our command line creator (below) to generate the necessary commands to suit our pool with your details</li>
+<li>Copy and paste the generated batch file into your text file ("hashthat.bat") and save your file</li>
+<li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li>
+</ol>
+<br>
+<hr>
+<br>
+
+</ul>
 </div>
 
-<a href="#" id="coinInfoBackground" class="hidden"></a>
+<ul class="no-bullets" style="font-size: 14px;">
+<li><h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
+</ul>
+<p></p>
+<pre style="margin-top: 10px;margin-bottom: 10px;">// *************
+// Claymores
+// *************
+//
+// ZecMiner64.exe -zpool POOL_ADDRESS:PORT -zwal WALLET_ADDRESS -zpsw x
+//
+// ZClassic example:
+ZecMiner64.exe -zpool stratum+tcp://stratum.hashthat.net:3032 -zwal t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg -zpsw x
+//
 
-<div id="coinInfo" class="hidden">
-    <a href="#" id="coinInfoClose">×</a>
-    <div><span class="coinInfoName"></span> Configuration:</div>
-    <div id="coinInfoRows">
-        <div id="coinInfoRowKeys">
-            <div>Username:</div>
-            <div>Password:</div>
-        </div>
-        <div id="coinInfoRowValues">
-            <div id="coinInfoUsername"></div>
-            <div>anything</div>
-        </div>
-    </div>
+
+// *************
+// DSTM Miner
+// *************
+// 
+// zm --server POOL_ADDRESS --port PORT --user WALLET_ADDRESS --pass x
+//
+// ZClassic example:
+zm --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
+//
+
+
+// *************
+// EWBF Miner
+// *************
+// 
+// miner --server POOL_ADDRESS --port PORT --user WALLET_ADDRESS --pass x
+//
+// ZClassic example:
+miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
+//
+
+</pre>
+</div>
+</div>
+</div>
+<br>
+<div id="orHolder">
+<div id="orLine"></div>
+<div id="orText">or</div>
+</div>
+</div>
+</div>
+<div class="miningOption" style="background-color: rgb(126, 163, 233);">
+<div class="miningOptionNum"></div>
+<div class="miningOptionInstructions">
+<div>Don't have your own mining hardware?</div>
+<div>
+<p>You can rent mining power from one of these sites and start hashing in less than 10 minutes!</p>
+<a onClick="ga('send','event','Banner Click','Nice Hash')" href="https://www.nicehash.com" target="_blank" title="Rent hashpower from NiceHash">NiceHash</a><br>
+<a onClick="ga('send','event','Banner Click','Mining Rig Rentals')" href="https://www.miningrigrentals.com?ref=70230" target="_blank" title=" Rent hashpower from Mining Rig Rentals">Mining Rig Rentals</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <script>
-
-    function showCoinConfig(info){
-
-        var htmlKeys = '<div class="coinInfoData">Algorithm:</div>';
-        var htmlValues = '<div class="coinInfoData">' + info.algo + '</div>';
-
-        for (var port in info.ports){
-            htmlKeys += '<div class="coinInfoData">URL <span class="coinInfoSubtle">(difficulty ' + info.ports[port].diff + ')</span>:</div>';
-            htmlValues += '<div class="coinInfoData">stratum+tcp://' + info.host + ':' + port + '</div>';
+        var strs = {
+        claymores : function(coin, addy){
+          return "ZecMiner64.exe -zpool "+coin.addy+":"+coin.port+" -zwal "+addy+" -zpsw x";
+        },
+        ewbf : function(coin, addy){
+          return "miner --server "+coin.addy+" --port "+coin.port+" --user "+addy+" --pass x";
+        },
+        dstm : function(coin, addy){
+          return "zm --server "+coin.addy+" --port "+coin.port+" --user "+addy+" ---pass x";
         }
+      }
+      
+      var pools = {
+       zcl : {port : 3144, addy : "ssl://stratum.hashthat.net"},
+       
+      }
+      
+      jQuery(function(){
+        $('#go').on('click',function(){
+          console.log(
+            $('#software').val(), $('#coin').val() , $('#addy').val()
+          );
+          $('#output').html(strs[$('#software').val()]( pools[$('#coin').val()] , $('#addy').val()) );
+          $('#outputHelp').show();
+          $('#output').show();
+        })
+      })
+      </script>
 
-        if (info.coin)
-            $('#coinInfoUsername').text('your ' + info.coin.name + ' wallet address');
-        else
-            $('#coinInfoUsername').text('your public key');
-        $('.coinInfoData').remove();
-        $('#coinInfoRowKeys').append(htmlKeys);
-        $('#coinInfoRowValues').append(htmlValues);
-    }
-
-    $('#coinGlowTrigger').click(function(event){
-        event.preventDefault();
-        $('.menuList').addClass('glow');
-        setTimeout(function(){
-            $('.menuList').removeClass('glow');
-        }, 200);
-        return false;
-    });
-
-    $('.poolOption').click(function(event){
-        event.preventDefault();
-        showCoinConfig($(this).data('info'));
-        $('#coinInfoBackground,#coinInfo').removeClass('hidden');
-        $('#coinInfoBackground').css('opacity', 0.7);
-        return false;
-    });
-
-    $('#coinInfoBackground,#coinInfoClose').click(function(event){
-        event.preventDefault();
-        $('#coinInfoBackground,#coinInfo').addClass('hidden');
-        $('#coinInfoBackground').css('opacity', 0.0);
-        return false;
-    });
-
-    $('#nompAppDownload').click(function(event){
-        event.preventDefault();
-        // alert('NOMP App development still in progress...');
-        return false;
-    });
-</script>
+</main>
