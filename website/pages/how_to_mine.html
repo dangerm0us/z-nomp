@@ -308,7 +308,7 @@ Click the buttons below to download mining software depending on if you have an 
 <li>Copy and paste the example code below (relevant to the miner you chose) into your text file ("hashthat.bat") and save your file</li>
 <li>Do not forget to insert your OWN wallet address and remove the wallet address from the example.</li>
 <li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li></li></div>
-<h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
+<h4>Here's the example code for each miner:</h4></li>
 </ul>
 <p></p>
 <pre style="margin-top: 10px;margin-bottom: 10px;">// *************
@@ -348,14 +348,17 @@ miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCS
 // Bminer Miner
 // *************
 // 
-//
-//@echo OFF
-//REM Change the following address to your Zcash taddr.
-//SET ADDRESS=t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg
-//SET USERNAME=%ADDRESS%.worker
-//SET POOL=stratum.hashthat.net:3032
-//SET SCHEME=stratum
-//START "Bminer: When Crypto-mining Made Fast" bminer.exe -uri %SCHEME%://%USERNAME%@%POOL% -api 127.0.0.1:1880
+// ZClassic example:
+@echo OFF
+REM Change the following address to your Zcash taddr.
+SET ADDRESS=t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg
+SET USERNAME=%ADDRESS%.worker
+SET POOL=stratum.hashthat.net:3032
+SET SCHEME=stratum
+START "Bminer: When Crypto-mining Made Fast" bminer.exe -uri %SCHEME%://%USERNAME%@%POOL% -api 127.0.0.1:1880
+
+
+
 </pre>
 
 <p>
