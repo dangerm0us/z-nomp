@@ -235,20 +235,25 @@ Click the buttons below to download mining software depending on if you have an 
 <a class="button-linked pure-button" onclick="ga('send','event','Download miner','EWBFs')" href="https://bitcointalk.org/index.php?topic=1707546.0" target="_blank">EWBF</a>
 &emsp;
 <a class="button-linked pure-button" onclick="ga('send','event','Download miner','DSTM')" href="https://bitcointalk.org/index.php?topic=2021765.0" target="_blank">DSTM</a>
+&emsp;
+<a class="button-linked pure-button" onclick="ga('send','event','Download miner','Bminer')" href="https://www.bminer.me/releases/" target="_blank">Bminer</a>
+
 </div>
 </div>
 <div>
-<h4>General Windows Guide</h4>
+<h4>Once you've selected your miner of choice..</h4>
 <p>
 </p><ol style="font-size: 14px;">
 <li>Download and extract (unzip) your chosen mining software to its own folder e.g. c:\mining</li> 
-<li>Come back to this folder in step 3.</li> 
+<li>Leave this folder window open, we'll come back to it in step 3.</li> 
 <ul>
 </div>
 </div>
 
 
-
+</div>
+<br>
+<br>
 
 <div class="miningOption" style="background-color: #d4158b;">
 
@@ -256,6 +261,7 @@ Click the buttons below to download mining software depending on if you have an 
         <div>Step 2: Get a wallet</div>
             At the time of writing, there are a couple of good wallet options for ZClassic
             with Bitcoin Private wallets just around the corner.<p>
+            <b>>>>> This page will be updated as soon as the Bitcoin Private wallet is released! <<<<<</p></b><p>
             Zclassic Wallets:<p>
             <li>Full Wallet (Recommended, helps strengthen the network).</li>
             <li>Electrum Wallet</li>
@@ -269,37 +275,40 @@ Click the buttons below to download mining software depending on if you have an 
             <li>Full Wallet (Recommended, helps strengthen the network).</li>
             <li>Electrum Wallet</li>
             <br>
-            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPSwing')" href="" target="_blank">Coming Soon</a>
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPSwing')" href="" target="_blank">Full Wallet (COMING SOON)</a>
             &emsp;
-            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPElectrum')" href="" target="_blank">Coming Soon</a>
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPElectrum')" href="" target="_blank">Electrum Wallet (COMING SOON)</a>
 
 
-        </div>
+        
 
 
 
-</ol>
+
 <br>
-<hr>
+
 <br>
 
 </ul>
 </div>
 </div>
+<br>
+<br>
 <div class="miningOption" style="background-color: rgb(35, 129, 192);">
 <div class="miningOptionInstructions">
-<div>Step 3: Create a simple launcher file that starts mining with a click<br>
+<div>Step 3: Create a simple launcher file</div>
 </div>
-<ul class="no-bullets" style="font-size: 14px;">
-<li>Create a new txt file in the new folder (which should contain the mining software you unzipped/copied there).</li>
+<div style= justify-content: center>
+<!-- <ul class="no-bullets" style="font-size: 14px;" justify= "left"> -->
+<li>Create a new txt file in the folder we made in step 1 (which should contain the mining software you unzipped/copied there).</li>
 <li>Right click in the folder, select New -> Text Document, rename "New Text Document.txt" to hashthat.bat.</li>
 <li>If you can't see the file extensions (.txt) you will need to enable them. Guide <a href="https://support.microsoft.com/en-us/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer" target="_blank">HERE</a></li>
-</ul>
-</li>
-<li>Copy and paste the example code below into your text file ("hashthat.bat") and save your file</li>
-<li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li>
+<!-- </ul> -->
 
-    <li><h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
+<li>Copy and paste the example code below (relevant to the miner you chose) into your text file ("hashthat.bat") and save your file</li>
+<li>Do not forget to insert your OWN wallet address and remove the wallet address from the example.</li>
+<li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li></li></div>
+<h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
 </ul>
 <p></p>
 <pre style="margin-top: 10px;margin-bottom: 10px;">// *************
@@ -332,12 +341,30 @@ zm --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQ
 //
 // ZClassic example:
 miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
-//
 
+
+
+// *************
+// Bminer Miner
+// *************
+// 
+//
+//@echo OFF
+//REM Change the following address to your Zcash taddr.
+//SET ADDRESS=t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg
+//SET USERNAME=%ADDRESS%.worker
+//SET POOL=stratum.hashthat.net:3032
+//SET SCHEME=stratum
+//START "Bminer: When Crypto-mining Made Fast" bminer.exe -uri %SCHEME%://%USERNAME%@%POOL% -api 127.0.0.1:1880
 </pre>
 
-
+<p>
+If you have any questions about mining software, don't hesitate to message us on Telgram!
+</p>
 <br>
+</div>
+</div>
+
 <div id="orHolder">
 <div id="orLine"></div>
 <div id="orText">or</div>
@@ -359,8 +386,5 @@ Please use our affiliate links below which help support this pool!</p>
 <a class="button-linked pure-button" onClick="ga('send','event','Banner Click','Nice Hash')" href="https://www.nicehash.com?refby=1289338" target="_blank" title="Rent hashpower from NiceHash">NiceHash</a>
 <a class="button-linked pure-button" onClick="ga('send','event','Banner Click','Mining Rig Rentals')" href="https://www.miningrigrentals.com?ref=70230" target="_blank" title=" Rent hashpower from Mining Rig Rentals">Mining Rig Rentals</a>
 </div>
-    
-
-
 
 </main>
