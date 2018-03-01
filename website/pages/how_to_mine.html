@@ -7,7 +7,7 @@
     }
 
     .glow{
-        box-shadow: inset 0 0 12px 4px #ff6c00;
+        box-shadow: inset 0 0 12px 4px #00ffea;
     }
 
     .hidden{
@@ -63,14 +63,15 @@
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        padding-left: 30px;
     }
 
     a.miningOption:hover{
-        color: #f69b3a;
+        color: #3ad0f6;
     }
 
     .miningOption:first-child{
-        background-color: #0e11c7;
+        background-color: rgb(35, 129, 192);
     }
     .miningOption:last-child{
         background-color: #5a4c64;
@@ -90,10 +91,7 @@
     .miningOptionInstructions > div:first-child{
         font-size: 2.4em;
     }
-    .miningOptionInstructions > div:last-child{
-        margin-top: 20px;
-        font-size: 1.3em;
-    }
+
 
     #orHolder{
         height: 37px;
@@ -128,7 +126,7 @@
         clear: both;
         color: #555555;
         padding: 1em 1em;
-        margin: auto 40px auto 40px;
+        margin: auto 40px auto 10px;
         background: #f4f4f4;
         border: solid 1px #e1e1e1
     }
@@ -176,54 +174,53 @@ ul.no-bullets li
 </style>
 
 <div id="main">
-<div class="miningOption">
-<div class="miningOptionNum"></div>
+<div class="miningOption" style="background-color: rgb(35, 129, 192)">
+<h4 style="font-size: 17px;">Let's start mining in 3 easy steps!</h4>
 <div class="miningOptionInstructions">
-<div>Let's get started!<br>
+<li><i class="fa fa-gavel"></i>&nbsp;Choose your mining software depending on your graphics card (AMD or Nvidia)</li>
+<li><i class="fa fa-shopping-bag"></i>&nbsp;Download and install a wallet for your coins</li>
+<li><i class="fa fa-rocket"></i>&nbsp;Create a launcher file that starts your miner and connects to our pool</li>
+</div>
+<div class="miningOptionInstructions">
+<div>Step 1: Download mining software to your computer.<br>
 </div>
 <p>
-HashThat.net supports crypto currencies you can mine with the GPU in your computer.</p>
-<br />
-<h4 style="font-size: 17px;">The process is actually very easy, and we will do it in 3 simple steps:</h4>
-<ul>
-<li><i class="fa fa-gavel"></i>&nbsp;Choose your mining software depending on your graphics card (AMD or Nvidia)</li>
-<li><i class="fa fa-tablet" data-fa-transform="rotate--90"></i></i>&nbsp;Download and install a wallet for your coins</li>
-<li><i class="fa fa-rocket"></i>&nbsp;Create a launcher file that starts your miner and connects to our pool</li>
-</ul>
-<br>
-<hr>
-<br>
-<div class="miningOptionInstructions" style=" font-size: 20px;"><h4><hard>Recommended Software for mining</hard></h4></div>
+HashThat.net supports crypto currencies you can mine with the GPU in your computer.  We are currently supporting Equihash coins, such as Bitcoin Private and Zclassic.</p>
+<br/>
+Click the buttons below to download mining software depending on if you have an AMD or Nvidia card.
 
+<br>
 
-<div style="display: flex; flex-direction: row; justify-content: space-between">
+<br>
+
+<div style="display: flex; flex-direction: row; justify-content: center">
 <style scoped>
         .button-linked {
             color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: #2A363B; /* this is background grey -tweak to what ever*/
+            background: #2A363B; 
         }
 
         .button-linked:hover {
             color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: #ff8c28; /* this is mzorange -tweak to what ever*/
+            background: rgb(231, 29, 181); 
         }
 
         .button-batch {
             color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: #ff3232; /* this is background grey -tweak to what ever*/
+            background: #ff3232; 
         }
 
         .button-batch:hover {
             color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background: #ff8c28; /* this is mzorange -tweak to what ever*/
+            background:  rgb(35, 129, 192); 
         }
       </style>
 <div style="width: 50%">
@@ -244,15 +241,43 @@ HashThat.net supports crypto currencies you can mine with the GPU in your comput
 <h4>General Windows Guide</h4>
 <p>
 </p><ol style="font-size: 14px;">
-<li>Download and extract (unzip) your chosen mining software to its own folder</li>
-<li>Create a new txt file in the new folder (which should contain the mining software) named "hashthat.bat"
+<li>Download and extract (unzip) your chosen mining software to its own folder e.g. c:\mining</li> 
+<li>Come back to this folder in step 3.</li> 
 <ul>
-<li>Right click in the folder, select New -> Text Document, rename "New Text Document.txt" to hashthat.bat.</li>
-<li>If you can't see the file extensions (.txt) you will need to enable them. Guide <a href="https://support.microsoft.com/en-us/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer" target="_blank">HERE</a></li>
-</ul>
-</li>
-<li>Copy and paste the example code below into your text file ("hashthat.bat") and save your file</li>
-<li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li>
+</div>
+</div>
+
+
+
+
+<div class="miningOption" style="background-color: #d4158b;">
+
+    <div class="miningOptionInstructions">
+        <div>Step 2: Get a wallet</div>
+            At the time of writing, there are a couple of good wallet options for ZClassic
+            with Bitcoin Private wallets just around the corner.<p>
+            Zclassic Wallets:<p>
+            <li>Full Wallet (Recommended, helps strengthen the network).</li>
+            <li>Electrum Wallet</li>
+            <br>
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','ZCLSwing')" href="https://github.com/z-classic/zclassic-full-node-wallet/releases" target="_blank">Full Wallet (Latest Version)</a>
+            &emsp;
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','ZCLElectrum')" href="https://github.com/BTCP-community/electrum-zcl/releases" target="_blank">Electrum Wallet (Latest Version)</a>
+            <br>
+            <br>
+            Bitcoin Private Wallets:<p>
+            <li>Full Wallet (Recommended, helps strengthen the network).</li>
+            <li>Electrum Wallet</li>
+            <br>
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPSwing')" href="" target="_blank">Coming Soon</a>
+            &emsp;
+            <a class="button-linked pure-button" onclick="ga('send','event','Download Wallet','BTCPElectrum')" href="" target="_blank">Coming Soon</a>
+
+
+        </div>
+
+
+
 </ol>
 <br>
 <hr>
@@ -260,9 +285,21 @@ HashThat.net supports crypto currencies you can mine with the GPU in your comput
 
 </ul>
 </div>
-
+</div>
+<div class="miningOption" style="background-color: rgb(35, 129, 192);">
+<div class="miningOptionInstructions">
+<div>Step 3: Create a simple launcher file that starts mining with a click<br>
+</div>
 <ul class="no-bullets" style="font-size: 14px;">
-<li><h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
+<li>Create a new txt file in the new folder (which should contain the mining software you unzipped/copied there).</li>
+<li>Right click in the folder, select New -> Text Document, rename "New Text Document.txt" to hashthat.bat.</li>
+<li>If you can't see the file extensions (.txt) you will need to enable them. Guide <a href="https://support.microsoft.com/en-us/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer" target="_blank">HERE</a></li>
+</ul>
+</li>
+<li>Copy and paste the example code below into your text file ("hashthat.bat") and save your file</li>
+<li>You should now be able to start mining by double clicking hashthat.bat to start the miner.</li>
+
+    <li><h4>See below further examples of batch files for mining with hashthat.net:</h4></li>
 </ul>
 <p></p>
 <pre style="margin-top: 10px;margin-bottom: 10px;">// *************
@@ -298,9 +335,8 @@ miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCS
 //
 
 </pre>
-</div>
-</div>
-</div>
+
+
 <br>
 <div id="orHolder">
 <div id="orLine"></div>
@@ -308,50 +344,23 @@ miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCS
 </div>
 </div>
 </div>
-<div class="miningOption" style="background-color: rgb(126, 163, 233);">
+
+
+
+
+<div class="miningOption" style="background-color: rgb(35, 129, 192);">
 <div class="miningOptionNum"></div>
 <div class="miningOptionInstructions">
 <div>Don't have your own mining hardware?</div>
 <div>
-<p>You can rent mining power from one of these sites and start hashing in less than 10 minutes!  Please use our affiliate links below to support this pool.</p>
-<a onClick="ga('send','event','Banner Click','Nice Hash')" href="https://www.nicehash.com?refby=1289338" target="_blank" title="Rent hashpower from NiceHash">NiceHash</a><br>
-<a onClick="ga('send','event','Banner Click','Mining Rig Rentals')" href="https://www.miningrigrentals.com?ref=70230" target="_blank" title=" Rent hashpower from Mining Rig Rentals">Mining Rig Rentals</a>
+<p>You can rent mining power from one of these sites and start hashing in less than 10 minutes! 
+<br>
+Please use our affiliate links below which help support this pool!</p>
+<a class="button-linked pure-button" onClick="ga('send','event','Banner Click','Nice Hash')" href="https://www.nicehash.com?refby=1289338" target="_blank" title="Rent hashpower from NiceHash">NiceHash</a>
+<a class="button-linked pure-button" onClick="ga('send','event','Banner Click','Mining Rig Rentals')" href="https://www.miningrigrentals.com?ref=70230" target="_blank" title=" Rent hashpower from Mining Rig Rentals">Mining Rig Rentals</a>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    
 
-<script>
-        var strs = {
-        claymores : function(coin, addy){
-          return "ZecMiner64.exe -zpool "+coin.addy+":"+coin.port+" -zwal "+addy+" -zpsw x";
-        },
-        ewbf : function(coin, addy){
-          return "miner --server "+coin.addy+" --port "+coin.port+" --user "+addy+" --pass x";
-        },
-        dstm : function(coin, addy){
-          return "zm --server "+coin.addy+" --port "+coin.port+" --user "+addy+" ---pass x";
-        }
-      }
-      
-      var pools = {
-       zcl : {port : 3144, addy : "ssl://stratum.hashthat.net"},
-       
-      }
-      
-      jQuery(function(){
-        $('#go').on('click',function(){
-          console.log(
-            $('#software').val(), $('#coin').val() , $('#addy').val()
-          );
-          $('#output').html(strs[$('#software').val()]( pools[$('#coin').val()] , $('#addy').val()) );
-          $('#outputHelp').show();
-          $('#output').show();
-        })
-      })
-      </script>
+
 
 </main>
