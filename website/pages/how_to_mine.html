@@ -43,9 +43,6 @@
         text-transform: capitalize;
     }
 
-    .menuList > a:hover{
-        color: #f69b3a;
-    }
 
     #main{
         flex: 1 1 auto;
@@ -53,18 +50,7 @@
         flex-direction: column;
         margin: 18px;
     }
-    .miningOption{
-        color: white;
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        min-height: 215px;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        padding-left: 30px;
-    }
+
 
     a.miningOption:hover{
         color: #3ad0f6;
@@ -308,52 +294,31 @@ Click the buttons below to download mining software depending on if you have an 
 <h4>Here's the example code for each miner:</h4></li>
 </ul>
 <p></p>
-<pre style="margin-top: 10px;margin-bottom: 10px;">// *************
-// Claymores
-// *************
-//
-// ZecMiner64.exe -zpool POOL_ADDRESS:PORT -zwal WALLET_ADDRESS -zpsw x
-//
-// ZClassic example:
-ZecMiner64.exe -zpool stratum+tcp://stratum.hashthat.net:3032 -zwal t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg -zpsw x
-//
+<pre style="margin-top: 10px;margin-bottom: 10px;">
 
 
-// *************
-// DSTM Miner
-// *************
-// 
-// zm --server POOL_ADDRESS --port PORT --user WALLET_ADDRESS --pass x
-//
-// ZClassic example:
-zm --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
-//
+Claymores (AMD):
 
 
-// *************
-// EWBF Miner
-// *************
-// 
-// miner --server POOL_ADDRESS --port PORT --user WALLET_ADDRESS --pass x
-//
-// ZClassic example:
-miner --server stratum.hashthat.net --port 3032 --user t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
+BTCP example:
+ZecMiner64.exe -zpool stratum+tcp://stratum.hashthat.net:3072 -zwal b1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg -zpsw x
+
+---------------------------------------------------------------------------------------------------------------
 
 
+DSTM Miner (Nvidia):
 
-// *************
-// Bminer Miner
-// *************
-// 
-// ZClassic example:
-@echo OFF
-REM Change the following address to your Zcash taddr.
-SET ADDRESS=t1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg
-SET USERNAME=%ADDRESS%.worker
-SET POOL=stratum.hashthat.net:3032
-SET SCHEME=stratum
-START "Bminer: When Crypto-mining Made Fast" bminer.exe -uri %SCHEME%://%USERNAME%@%POOL% -api 127.0.0.1:1880
 
+BTCP example:
+zm --server stratum.hashthat.net --port 3072 --user b1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
+
+---------------------------------------------------------------------------------------------------------------
+
+
+EWBF Miner (Nvidia):
+
+BTCP example:
+miner --server stratum.hashthat.net --port 3072 --user b1Snt2aUiqyL7B2tCBaBGeoCSJXQEuYhbkg --pass x
 
 
 </pre>
